@@ -43,7 +43,7 @@
 (setq org-directory "~/org/")
 
 ;; Projects
-(setq projectile-project-search-path '(("~/Documents/Code" . 3) ("~/Documents/School" . 4)))
+(setq projectile-project-search-path '(("~/Tank/Code/" . 3) ("~/Tank/School/Current" . 3)))
 
 ;; Use CCLS by default
 ;; (after! ccls

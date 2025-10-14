@@ -43,20 +43,52 @@
 (setq org-directory "~/org/")
 
 ;; Projects
-(setq projectile-project-search-path '(("~/Documents/Code" . 3)))
+(setq projectile-project-search-path '(("~/Documents/Code" . 3) ("~/Documents/School" . 4)))
 
 ;; Use CCLS by default
-(after! ccls
-  (setq ccls-initialization-options '(:index (:comments 2) :completion (:detailedLabel t)))
-  (set-lsp-priority! 'ccls 2))
+;; (after! ccls
+;;   (setq ccls-initialization-options '(:index (:comments 2) :completion (:detailedLabel t)))
+;;   (set-lsp-priority! 'ccls 2))
 
 ;; LSP Stuff
 (setq read-process-output-max (* 1024 2024))
-(setq lsp-idle-delay 0.050)
+(setq lsp-idle-delay 0.025)
 
 ;; Tabs
 (setq tab-width 2)
 (setq tab-stop-list (number-sequence 2 200 2))
+
+(defcustom +format-on-save-disabled-modes
+  '(sql-mode           ; sqlformat is currently broken
+    tex-mode           ; latexindent is broken
+    latex-mode
+    LaTeX-mode
+    org-msg-edit-mode  ; doesn't need a formatter
+    )
+  "A list of major modes in which to not reformat the buffer upon saving.
+
+  If it is t, it is disabled in all modes, the same as if the +onsave flag wasn't
+  used at all.
+  If nil, formatting is enabled in all modes."
+  :type '(list symbol))
+
+;; Org Mode
+(after! org
+  (plist-put org-format-latex-options :scale 1))
+
+(after! lsp-mode-hook
+  (require 'lsp-blueprint))
+
+(setq shell-file-name "fish")
+
+(after! vterm
+  ;; Disable Alt+number keys to prevent workspace switching conflicts
+  (dolist (num (number-sequence 0 9))
+    (let ((key (format "M-%d" num)))
+      (define-key vterm-mode-map (kbd key) nil))))
+
+(setq native-comp-jit-compilation t)
+(setq lsp-project-blacklist (list (expand-file-name "~")))
 
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
 ;; `after!' block, otherwise Doom's defaults may override your settings. E.g.

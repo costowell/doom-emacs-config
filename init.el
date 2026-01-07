@@ -47,10 +47,10 @@
        treemacs          ; a project drawer, like neotree but cooler
        ;;unicode           ; extended unicode support for various languages
        (vc-gutter +pretty) ; vcs diff in the fringe
-       vi-tilde-fringe   ; fringe tildes to mark beyond EOB
-       window-select     ; visually switch windows
+       ;;vi-tilde-fringe   ; fringe tildes to mark beyond EOB
+       ;;window-select     ; visually switch windows
        workspaces        ; tab emulation, persistence & separate workspaces
-       zen               ; distraction-free coding or writing
+       ;;zen               ; distraction-free coding or writing
 
        :editor
        (evil +everywhere); come to the dark side, we have cookies
@@ -75,7 +75,7 @@
        vc                ; version-control and Emacs, sitting in a tree
 
        :term
-       eshell            ; the elisp shell that works everywhere
+       ;;eshell            ; the elisp shell that works everywhere
        ;;shell             ; simple shell REPL for Emacs
        ;;term              ; basic terminal emulator for Emacs
        vterm             ; the best terminal emulation in Emacs
@@ -118,7 +118,7 @@
        ;;common-lisp       ; if you've seen one lisp, you've seen them all
        ;;coq               ; proofs-as-programs
        ;;crystal           ; ruby at the speed of c
-       (csharp +lsp +tree-sitter +dotnet)            ; unity, .NET, and mono shenanigans
+       ;;(csharp +lsp +tree-sitter +dotnet)            ; unity, .NET, and mono shenanigans
        data              ; config/data formats
        ;;(dart +flutter)   ; paint ui and not much else
        ;;dhall
@@ -139,20 +139,20 @@
        ;;hy                ; readability of scheme w/ speed of python
        ;;idris             ; a language you can depend on
        (json +lsp +tree-sitter)              ; At least it ain't XML
-       (java +lsp +tree-sitter)       ; the poster child for carpal tunnel syndrome
+       ;;(java +lsp +tree-sitter)       ; the poster child for carpal tunnel syndrome
        (javascript +lsp +tree-sitter)        ; all(hope(abandon(ye(who(enter(here))))))
        ;;julia             ; a better, faster MATLAB
        ;;kotlin            ; a better, slicker Java(Script)
        latex             ; writing papers in Emacs has never been so fun
        ;;lean              ; for folks with too much to prove
        ;;ledger            ; be audit you can be
-       lua               ; one-based indices? one-based indices
+       ;;lua               ; one-based indices? one-based indices
        (markdown +grip)          ; writing docs for people to ignore
        ;;nim               ; python + lisp at the speed of c
-       (nix +lsp +tree-sitter)               ; I hereby declare "nix geht mehr!"
+       ;;(nix +lsp +tree-sitter)               ; I hereby declare "nix geht mehr!"
        ;;ocaml             ; an objective camel
        (org +pretty +dragndrop +hugo)               ; organize your plain life in plain text
-       (php +lsp +tree-sitter)               ; perl's insecure younger brother
+       ;;(php +lsp +tree-sitter)               ; perl's insecure younger brother
        ;;plantuml          ; diagrams for confusing people more
        ;;graphviz          ; diagrams for confusing yourself even more
        ;;purescript        ; javascript, but functional
@@ -160,8 +160,8 @@
        ;;qt                ; the 'cutest' gui framework ever
        ;;racket            ; a DSL for DSLs
        ;;raku              ; the artist formerly known as perl6
-       (rest +jq)              ; Emacs as a REST client
-       rst               ; ReST in peace
+       ;;(rest +jq)              ; Emacs as a REST client
+       ;;rst               ; ReST in peace
        ;;(ruby +rails)     ; 1.step {|i| p "Ruby is #{i.even? ? 'love' : 'life'}"}
        (rust +lsp +tree-sitter)       ; Fe2O3.unwrap().unwrap().unwrap().unwrap()
        ;;scala             ; java, but good

@@ -5,6 +5,10 @@
 ;; on the command line, then restart Emacs for the changes to take effect -- or
 ;; use 'M-x doom/reload'.
 
+(package! protobuf-mode)
+(package! prettier)
+(package! grip-mode
+  :recipe (:host github :repo "seagle0128/grip-mode"))
 (package! puppet-mode)
 
 ;; To install SOME-PACKAGE from MELPA, ELPA or emacsmirror:

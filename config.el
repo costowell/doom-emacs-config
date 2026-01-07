@@ -57,6 +57,24 @@
 ;; Tabs
 (setq tab-width 2)
 (setq tab-stop-list (number-sequence 2 200 2))
+;; Shell
+(setq shell-file-name "fish")
+
+;; Keybinds
+(after! vterm
+  ;; Disable Alt+number keys to prevent workspace switching conflicts
+  (dolist (num (number-sequence 0 9))
+    (let ((key (format "M-%d" num)))
+      (define-key vterm-mode-map (kbd key) nil))))
+
+;; Window navigation with Alt + h/j/k/l
+(use-package bind-key
+  :ensure t
+  :config
+  (bind-key* "M-h" 'windmove-left)
+  (bind-key* "M-j" 'windmove-down)
+  (bind-key* "M-k" 'windmove-up)
+  (bind-key* "M-l" 'windmove-right))
 
 (defcustom +format-on-save-disabled-modes
   '(sql-mode           ; sqlformat is currently broken

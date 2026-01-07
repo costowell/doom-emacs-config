@@ -1,15 +1,15 @@
 ;; -*- no-byte-compile: t; -*-
 ;;; $DOOMDIR/packages.el
 
-;; To install a package with Doom you must declare them here and run 'doom sync'
-;; on the command line, then restart Emacs for the changes to take effect -- or
-;; use 'M-x doom/reload'.
+;; To install a package:
+;;
+;;   1. Declare them here in a `package!' statement,
+;;   2. Run 'doom sync' in the shell,
+;;   3. Restart Emacs.
+;;
+;; Use 'C-h f package\!' to look up documentation for the `package!' macro.
 
 (package! protobuf-mode)
-(package! prettier)
-(package! grip-mode
-  :recipe (:host github :repo "seagle0128/grip-mode"))
-(package! puppet-mode)
 
 ;; To install SOME-PACKAGE from MELPA, ELPA or emacsmirror:
 ;; (package! some-package)
@@ -19,7 +19,6 @@
 ;; https://github.com/radian-software/straight.el#the-recipe-format
 ;; (package! another-package
 ;;   :recipe (:host github :repo "username/repo"))
-;;
 
 ;; If the package you are trying to install does not contain a PACKAGENAME.el
 ;; file, or is located in a subdirectory of the repo, you'll need to specify
@@ -54,8 +53,3 @@
 ;; (unpin! pinned-package another-pinned-package)
 ;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
 ;; (unpin! t)
-
-(package! blueprint-mode
-  :recipe (:host github :repo "DrBluefall/blueprint-mode"))
-(package! vala-mode
-  :recipe (:host github :repo "rrthomas/vala-mode"))

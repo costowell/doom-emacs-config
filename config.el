@@ -21,8 +21,8 @@
 ;; See 'C-h v doom-font' for documentation and more examples of what they
 ;; accept. For example:
 ;;
-(setq doom-font (font-spec :family "JetBrainsMono Nerd Font" :size 16 :weight 'semi-light)
-      doom-variable-pitch-font (font-spec :family "JetBrainsMono Nerd Font" :size 17))
+;;(setq doom-font (font-spec :family "Fira Code" :size 12 :weight 'semi-light)
+;;      doom-variable-pitch-font (font-spec :family "Fira Sans" :size 13))
 ;;
 ;; If you or Emacs can't find your font, use 'M-x describe-font' to look them
 ;; up, `M-x eval-region' to execute elisp code, and 'M-x doom/reload-font' to
@@ -40,23 +40,15 @@
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
-(setq org-directory "~/org/")
+(setq org-directory "~/Tank/org")
 
 ;; Projects
 (setq projectile-project-search-path '(("~/Tank/Code/" . 3) ("~/Tank/School/Current" . 3)))
-
-;; Use CCLS by default
-;; (after! ccls
-;;   (setq ccls-initialization-options '(:index (:comments 2) :completion (:detailedLabel t)))
-;;   (set-lsp-priority! 'ccls 2))
 
 ;; LSP Stuff
 (setq read-process-output-max (* 1024 2024))
 (setq lsp-idle-delay 0.025)
 
-;; Tabs
-(setq tab-width 2)
-(setq tab-stop-list (number-sequence 2 200 2))
 ;; Shell
 (setq shell-file-name "fish")
 
@@ -75,38 +67,6 @@
   (bind-key* "M-j" 'windmove-down)
   (bind-key* "M-k" 'windmove-up)
   (bind-key* "M-l" 'windmove-right))
-
-(defcustom +format-on-save-disabled-modes
-  '(sql-mode           ; sqlformat is currently broken
-    tex-mode           ; latexindent is broken
-    latex-mode
-    LaTeX-mode
-    org-msg-edit-mode  ; doesn't need a formatter
-    )
-  "A list of major modes in which to not reformat the buffer upon saving.
-
-  If it is t, it is disabled in all modes, the same as if the +onsave flag wasn't
-  used at all.
-  If nil, formatting is enabled in all modes."
-  :type '(list symbol))
-
-;; Org Mode
-(after! org
-  (plist-put org-format-latex-options :scale 1))
-
-(after! lsp-mode-hook
-  (require 'lsp-blueprint))
-
-(setq shell-file-name "fish")
-
-(after! vterm
-  ;; Disable Alt+number keys to prevent workspace switching conflicts
-  (dolist (num (number-sequence 0 9))
-    (let ((key (format "M-%d" num)))
-      (define-key vterm-mode-map (kbd key) nil))))
-
-(setq native-comp-jit-compilation t)
-(setq lsp-project-blacklist (list (expand-file-name "~")))
 
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
 ;; `after!' block, otherwise Doom's defaults may override your settings. E.g.

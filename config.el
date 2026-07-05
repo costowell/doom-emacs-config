@@ -68,6 +68,11 @@
   (bind-key* "M-k" 'windmove-up)
   (bind-key* "M-l" 'windmove-right))
 
+(setq-hook! '(go-mode-hook go-ts-mode-hook)
+  tab-width 4
+  go-ts-mode-indent-offset 4
+  evil-shift-width 4)
+
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
 ;; `after!' block, otherwise Doom's defaults may override your settings. E.g.
 ;;

@@ -10,6 +10,17 @@
 ;; Use 'C-h f package\!' to look up documentation for the `package!' macro.
 
 (package! protobuf-mode)
+(package! pest-mode)
+(package! org-fragtog)
+(package! typst-ts-mode
+  ;; HACK: Upstream puts an autoload cookie on a `define-compilation-mode' form
+  ;;   (typst-ts-compile.el), so its generated autoloads file dies with "Symbol's
+  ;;   function definition is void: define-compilation-mode" unless compile.el
+  ;;   happens to be loaded already. Skip autoloads entirely; config.el declares
+  ;;   the entry points it needs via `use-package!'s :mode/:commands.
+  ;; REVIEW: Drop :build once meow_king/typst-ts-mode drops that cookie.
+  :recipe (:host codeberg :repo "meow_king/typst-ts-mode"
+           :build (:not autoloads)))
 
 ;; To install SOME-PACKAGE from MELPA, ELPA or emacsmirror:
 ;; (package! some-package)

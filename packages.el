@@ -22,6 +22,8 @@
   ;; REVIEW: Drop :build once meow_king/typst-ts-mode drops that cookie.
   :recipe (:host codeberg :repo "meow_king/typst-ts-mode"
            :build (:not autoloads)))
+(package! magit-difftastic
+  :recipe (:host github :repo "rschmukler/magit-difftastic"))
 
 ;; To install SOME-PACKAGE from MELPA, ELPA or emacsmirror:
 ;; (package! some-package)

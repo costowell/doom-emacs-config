@@ -12,6 +12,7 @@
 (package! protobuf-mode)
 (package! pest-mode)
 (package! org-fragtog)
+(package! magit-delta)
 (package! typst-ts-mode
   ;; HACK: Upstream puts an autoload cookie on a `define-compilation-mode' form
   ;;   (typst-ts-compile.el), so its generated autoloads file dies with "Symbol's
